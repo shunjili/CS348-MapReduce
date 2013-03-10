@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="lib" path="/Software/lion-local/hadoop-0.20.2-cdh3u5/hadoop-core-0.20.2-cdh3u5.jar"/>
+	<classpathentry kind="lib" path="/Accounts/lis/Desktop/CS 348/HadoopLab/lib/json-simple-1.1.1.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

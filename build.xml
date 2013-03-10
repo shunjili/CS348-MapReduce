@@ -1,0 +1,49 @@
+<project name="ClickRate" default="jar" basedir=".">
+
+<!-- Set this to be the location of your Java implementation. -->
+
+<property name="java_home" location="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home" />
+
+<!-- Set this to be the location of your Hadoop implementation. -->
+
+<property name="hadoop_home" location="/usr/local/hadoop-0.20.2-cdh3u5" />
+
+
+<target name="clean" description="clean up">
+
+<delete dir="bin" />
+
+<delete file="build.jar" />
+
+</target>
+
+
+<target name="compile" description="compile the source">
+
+<mkdir dir="bin" />
+
+
+<!-- Compile the Java code. Note it must be compatible with Java 1.6. -->
+
+<javac executable="${java_home}/bin/javac" fork="yes" classpath="${hadoop_home}/hadoop-core-0.20.2-cdh3u5.jar:lib/json-simple-1.1.1.jar" includeantruntime="false" srcdir="src" destdir="bin" />
+
+</target>
+
+
+<target name="jar" depends="compile" description="generate the jar file">
+
+<!-- Put generated class files into the build.jar file -->
+
+<jar destfile="build.jar">
+
+<fileset dir="bin/" />
+
+<fileset dir="src/" />
+
+<zipfileset includes="**/*.class" src="lib/json-simple-1.1.1.jar" />
+
+</jar>
+
+</target>
+
+</project>
